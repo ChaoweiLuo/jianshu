@@ -1,0 +1,8 @@
+{
+  "name": "jianshu",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ChaoweiLuo/jianshu.git",
+  "author": "luochaowei <chaowei.luo@live.cm>",
+  "license": "MIT"
+}
