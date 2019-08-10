@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React</title>
+</head>
+<body>
+
+
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- <script src="./state.js" type="text/babel" ></script> -->
+  <script  type="text/babel" >    
+    class MyComponent extends React.Component {
+
+      state = {
+        msg: 'Hello world'
+      }
+
+      btnClick = (arg, e) => {
+        alert(arg);
+      }
+
+      render () {
+        let clickFunc  = (arg) => {
+          return e => {
+            return this.btnClick(arg, e)
+          }
+        };
+        return (
+          <div>
+            <div>
+              <button onClick={this.btnClick.bind(null, 'First')}>btn1</button>
+              <button onClick={clickFunc('Second')}>btn2</button>
+            </div>
+          </div>
+        )
+      }
+    }
+
+    let Helloworld = React.createElement(MyComponent, { value: 'test' }, []);
+    ReactDOM.render(Helloworld, document.querySelector("#root"));
+  </script>
+</body>
+</html>
